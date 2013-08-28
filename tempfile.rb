@@ -21,15 +21,17 @@ get '/:short_url' do
   #### find row for short_url
     #### count += 1
     #### redirect to url
-
   @look_url = 'shit.ly/' + params[:short_url]
-  @redirect_url = Url.where(short_url: @look_url).first.url
-
-  p @url = Url.where(short_url: @look_url).last
-  @url.clicks += 1
+  @url = Url.where(short_url: @look_url).last
+  p @url.clicks += 1
   @url.save
+# p @url.clicks
+  # current_click += 1
+  # @url_clicks = current_click
+  # @url.save
+  # @redirect_url = Url.where(short_url: @look_url).first.url
 
-  erb :show
+  # erb :show
 end
 
 
