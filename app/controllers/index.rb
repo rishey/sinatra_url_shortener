@@ -4,13 +4,12 @@ get '/' do
 end
 
 post '/urls' do
-  @short_url = generate_short_url
+  puts params[:urls]
+  @url = Url.new(params[:urls])
+  @short_url = @url.generate_short_url
+
+  #  Url.create(:url => )
+  #### stick in in the urls table with url and short_url
   erb :urls
 end 
 
-def generate_short_url
-  chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789'
-  password = ''
-  6.times { |i| password << chars[rand(chars.length)] }
-  "shit.ly/" + password
-end
