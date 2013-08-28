@@ -1,2 +1,11 @@
-<%=@short_url%>
-<%=@url.url%>
+
+<div class="container">
+  <h1>your shit.ly results</h1>
+  <table> 
+    <p> 
+      your non-shit.ly url: <a href="<%=@url.url%>"><%=@url.url%></a><br>
+      <br>
+      your freaken shit-ly url: <a href="http://<%=@short_url%>"><%=@short_url%></a><br>
+    </p>
+  </table>
+</div>
